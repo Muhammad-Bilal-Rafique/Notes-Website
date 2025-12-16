@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* globals.css */
+
+:root {
+  --primary-color: #4F46E5;
+  --hover-color: #2f25ec;
+  --secondary-color: #10B981;
+  --background-color: #F9FAFB;
+  --card-background: #FFFFFF;
+  --text-color: #111827;
+  --subtext-color: #6B7280;
+  --error-color: #EF4444;
+}
+
+/* Example usage anywhere in your app */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
