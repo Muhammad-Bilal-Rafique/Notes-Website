@@ -6,20 +6,20 @@ import Welcome from "./components/Welcome";
 import axios from "axios";
 import ProtectedRoute from "./components/ProtectedRoute";
 export default function Home() {
-  const [notes, setnotes] = useState([]);
+  const [notes, Setnotes] = useState([]);
   const [title, settitle] = useState("");
   const [note, setnote] = useState("");
   const [id, setid] = useState("")
   const [refresh, setrefresh] = useState(true);
   const [isEditting, setisEditting] = useState(false);
 
-  const getNotes = async () => {
+  useEffect(() => {
+  const getNotesFrombk = async () => {
     const res = await axios.get("/api/notes");
-    setnotes(res.data.notes);
+    Setnotes(res.data.notes);
     console.log(res.data.notes);
   };
-  useEffect(() => {
-    getNotes();
+    getNotesFrombk();
   }, [refresh]);
 
   // HANDLE UPDATE FUNCTION
@@ -112,7 +112,7 @@ export default function Home() {
           </h2>
           {notes.length === 0 ? (
             <p className="text-gray-500">
-              You don't have any notes yet. Create one!
+              You don have any notes yet. Create one!
             </p>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
